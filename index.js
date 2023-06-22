@@ -5,7 +5,14 @@ const msg = [];
 
 
 
-bot.start(async (ctx) => await ctx.reply("vvedite cifri"));
+bot.start( (ctx) => {
+
+    
+  
+    ctx.reply("vvedite cifri")
+   
+
+});
 
 
 bot.on('text', async (ctx) => {
@@ -24,12 +31,15 @@ bot.on('text', async (ctx) => {
               Пит.Сорб.__________${msg[7]} м3.
               Пит.Сорб.__________${msg[8]} тн.
               Тех. Вода.__________${msg[9]} м3.`
+              console.log(msgID1)
 
-   await ctx.reply(text);
+   await ctx.editMessageText(ctx.chat.id, msgID1, null, text);
      
     
 })
 
 
 bot.launch();
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
 // '\n 12-761-989-766-651-651-2528-990-644-786'
