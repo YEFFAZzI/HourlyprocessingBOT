@@ -1,4 +1,8 @@
+require("dotenv").config();
+const {Telegraf} = requre("telegraf");
+const bot = new Telegraf(procces.env.BOT_TOKEN);
 
-//start 
+bot.start(async (ctx) => ctx.reply("vvedite cifri"));
 
-5560383952:AAEx4_jUB54DmJhUnoP6-z8IFEbMMrD-Na0
+bot.launch();
+
