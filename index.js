@@ -5,7 +5,10 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.start(async (ctx) => await ctx.reply("vvedite cifri"));
 
 
-bot.on('text', (ctx) => ctx.reply('text'))
+bot.on('text', (ctx) => {
+    ctx.reply('text');
+    console.log(JSON.stringify(ctx.update.message,3,null));
+})
 
 
 bot.launch();
