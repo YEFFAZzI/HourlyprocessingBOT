@@ -27,7 +27,7 @@ const getmsg = (msg) =>
 `
     
 bot.start( async (ctx) => {
-    hello
+    console.log(JSON.stringify(ctx.update,null,2));
 });
 
 bot.on('text', async (ctx) => {
